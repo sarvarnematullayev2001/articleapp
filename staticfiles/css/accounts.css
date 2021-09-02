@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    background: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 1rem;
+}
+
+
+/* .container_login * {
+    color: #fff;
+    font-size: 3vw;
+    font-family: arial;
+    text-align: center;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.625rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */

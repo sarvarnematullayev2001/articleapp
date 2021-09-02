@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Post Detail{% endblock title %}
+{% block content %}
+
+    <div class="container">
+        <div class="post-detail">
+            {% if post.image %}
+            <div class='post-detail__image'>
+                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+            </div>
+            {% endif %}
+            <h3>{{ post.title }}</h3>
+            <span class="text-muted">by {{ post.author }} | {{ post.date }}</span>
+            <p>{{ post.body | safe }}</p>
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <a href="{% url 'post_edit' post.pk %}" type="button" class="btn btn-outline-primary">Edit Post</a>
+                <a href="{% url 'post_delete' post.pk %}" type="button" class="btn btn-outline-primary">Delete Post</a>
+                <a href="{% url 'post_list' %}" type="button" class="btn btn-outline-primary">All Posts</a>
+            </div>
+            <div class="comments card-footer">
+                <h3 style='color: black;'>Comments</h3>
+                {% for comment in post.comments.all %}
+                <p>
+                    <span class="font-weight-bold text-muted">
+                    {{ comment.author }} &middot; {{ comment.date}} 
+                    </span><br>
+                    {{ comment }}
+                </p>
+                {% endfor %}
+            </div>
+        </div><br><br>
+    </div>
+
+{% endblock content %}
